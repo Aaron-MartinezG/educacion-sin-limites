@@ -1,3 +1,9 @@
+# educacion-sin-limites
+
+[![CI — Next.js](https://github.com/Aaron-MartinezG/educacion-sin-limites/actions/workflows/ci.yml/badge.svg?branch=develop&event=push)](https://github.com/Aaron-MartinezG/educacion-sin-limites/actions/workflows/ci.yml)
+
+Repositorio de la página web para la plataforma educativa "Educación Sin Límites".
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
