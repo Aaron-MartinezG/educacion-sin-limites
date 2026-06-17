@@ -1,38 +1,32 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Paleta principal — cálida e infantil */
-  --color-naranja: #ff6b35;
-  --color-naranja-claro: #ff9a72;
-  --color-amarillo: #ffd166;
-  --color-amarillo-claro: #ffe8a3;
-  --color-verde: #06d6a0;
-  --color-verde-claro: #a8f0df;
-  --color-azul: #118ab2;
-  --color-azul-claro: #8dd7f0;
-  --color-morado: #9b5de5;
-  --color-morado-claro: #d4b8f5;
-  --color-rosa: #f72585;
-  --color-crema: #fff8f0;
+  /* === Paleta principal (diseño landing) === */
+  --color-azul-oscuro: #1b3a73;      /* Headings, logo, texto principal */
+  --color-azul-medio: #2555a0;       /* Links activos */
+  --color-verde-bosque: #2a5c40;     /* Botones CTA */
+  --color-amarillo-card: #f5d45c;    /* Card "Sin castigos" */
+  --color-verde-seccion: #27563b;    /* Sección México */
+  --color-crema: #f0ece6;            /* Fondo de página */
 
-  /* Neutros */
-  --color-gris-oscuro: #2d2d2d;
+  /* === Colores de acento (pantallas futuras) === */
+  --color-naranja: #ff6b35;
+  --color-amarillo: #ffd166;
+  --color-verde: #06d6a0;
+  --color-azul: #118ab2;
+  --color-morado: #9b5de5;
+  --color-rosa: #f72585;
+
+  /* === Neutros === */
   --color-gris: #6b7280;
+  --color-gris-oscuro: #374151;
   --color-gris-claro: #f3f4f6;
 
-  /* Semánticos */
-  --color-fondo: var(--color-crema);
-  --color-texto: var(--color-gris-oscuro);
-  --color-primario: var(--color-naranja);
-  --color-secundario: var(--color-morado);
-  --color-exito: var(--color-verde);
-  --color-error: #ef4444;
-
-  /* Tipografía */
+  /* === Tipografía === */
   --font-sans: var(--font-nunito, ui-sans-serif, system-ui, sans-serif);
 }
 
 body {
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
+  background-color: var(--color-crema);
+  color: var(--color-gris-oscuro);
 }
