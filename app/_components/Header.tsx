@@ -4,36 +4,57 @@ import Link from "next/link";
 import { useApp } from "@/lib/context/AppContext";
 
 export default function Header() {
-  const { usuario, isAutenticado, cerrarSesion } = useApp();
+  const { isAutenticado, cerrarSesion } = useApp();
 
   return (
-    <header className="bg-naranja text-white shadow-md">
-      <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-          <span>🌟</span>
-          <span>Educación Sin Límites</span>
+    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <Link href="/" className="font-extrabold text-xl text-azul-oscuro">
+          Educación Sin Límites
         </Link>
 
-        {isAutenticado && (
-          <nav className="flex items-center gap-4">
-            <Link href="/tracks" className="hover:underline font-medium">
-              Lecciones
-            </Link>
-            <Link href="/perfil" className="hover:underline font-medium">
-              Mi Perfil
-            </Link>
-            <div className="flex items-center gap-2">
-              <span className="text-xl">{usuario?.avatar}</span>
-              <span className="font-medium">{usuario?.nombre}</span>
-            </div>
+        <nav className="hidden md:flex items-center gap-8 text-base">
+          <Link
+            href="/"
+            className="font-semibold text-azul-oscuro underline underline-offset-4 decoration-2"
+          >
+            Inicio
+          </Link>
+          <Link href="/tracks" className="text-gris hover:text-azul-oscuro transition-colors">
+            Lecciones
+          </Link>
+          <Link href="/#mexico" className="text-gris hover:text-azul-oscuro transition-colors">
+            México
+          </Link>
+        </nav>
+
+        <div className="flex items-center gap-3">
+          {isAutenticado && (
             <button
               onClick={cerrarSesion}
-              className="text-sm underline opacity-80 hover:opacity-100"
+              className="text-sm text-gris hover:text-azul-oscuro transition-colors"
             >
               Salir
             </button>
-          </nav>
-        )}
+          )}
+          <button
+            aria-label="Perfil"
+            className="w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-500 hover:border-azul-oscuro hover:text-azul-oscuro transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                fillRule="evenodd"
+                d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
   );
