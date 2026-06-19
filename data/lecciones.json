@@ -1,0 +1,86 @@
+[
+  {
+    "id": "leccion-fracciones",
+    "titulo": "Fracciones",
+    "descripcion": "Aprende a dividir en partes iguales junto a Pepe.",
+    "trackId": "track-matematicas",
+    "orden": 1,
+    "duracionMinutos": 5,
+    "ejercicios": [
+      {
+        "id": "ej-fracciones-1",
+        "tipo": "fraccion",
+        "pregunta": "¿Cuántas partes iguales tiene una pizza cortada por la mitad?",
+        "opciones": ["1", "2", "3", "4"],
+        "respuestaCorrecta": "2",
+        "puntos": 10
+      },
+      {
+        "id": "ej-fracciones-2",
+        "tipo": "fraccion",
+        "pregunta": "Si divides una barra de chocolate en 3 partes iguales, ¿qué fracción representa cada parte?",
+        "opciones": ["1/2", "1/3", "1/4", "1/5"],
+        "respuestaCorrecta": "1/3",
+        "puntos": 10
+      },
+      {
+        "id": "ej-fracciones-3",
+        "tipo": "fraccion",
+        "pregunta": "Pepe tiene una pizza deliciosa. ¿Puedes decirnos cuántas rebanadas forman 1/4?",
+        "opciones": ["1", "2", "5", "4"],
+        "respuestaCorrecta": "1",
+        "puntos": 10
+      },
+      {
+        "id": "ej-fracciones-4",
+        "tipo": "fraccion",
+        "pregunta": "¿Qué fracción es más grande: 1/2 o 1/4?",
+        "opciones": ["1/2", "1/4", "Son iguales", "Ninguna"],
+        "respuestaCorrecta": "1/2",
+        "puntos": 10
+      },
+      {
+        "id": "ej-fracciones-5",
+        "tipo": "fraccion",
+        "pregunta": "Si comes 2 de las 4 rebanadas de una pizza, ¿qué fracción comiste?",
+        "opciones": ["1/4", "1/2", "3/4", "2/2"],
+        "respuestaCorrecta": "1/2",
+        "puntos": 10
+      }
+    ]
+  },
+  {
+    "id": "leccion-cuentos-gigantes",
+    "titulo": "Cuentos de Gigantes",
+    "descripcion": "Lee con atención y responde sobre la historia del gigante bonachón.",
+    "trackId": "track-espanol",
+    "orden": 1,
+    "duracionMinutos": 5,
+    "ejercicios": [
+      {
+        "id": "ej-cuentos-1",
+        "tipo": "opcion-multiple",
+        "pregunta": "¿Cómo se llamaba el gigante de la historia?",
+        "opciones": ["Gruñón", "Bonachón", "Saltarín", "Dormilón"],
+        "respuestaCorrecta": "Bonachón",
+        "puntos": 10
+      },
+      {
+        "id": "ej-cuentos-2",
+        "tipo": "opcion-multiple",
+        "pregunta": "¿Dónde vivía el gigante?",
+        "opciones": ["En el mar", "En una cueva", "En el bosque", "En una torre"],
+        "respuestaCorrecta": "En el bosque",
+        "puntos": 10
+      },
+      {
+        "id": "ej-cuentos-3",
+        "tipo": "opcion-multiple",
+        "pregunta": "¿Qué le regaló el gigante a los niños del pueblo?",
+        "opciones": ["Una canasta de manzanas", "Un libro mágico", "Un mapa", "Una flor gigante"],
+        "respuestaCorrecta": "Una canasta de manzanas",
+        "puntos": 10
+      }
+    ]
+  }
+]

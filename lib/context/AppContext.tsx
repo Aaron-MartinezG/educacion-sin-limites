@@ -9,6 +9,13 @@ const USUARIO_MOCK: Usuario = {
   avatar: "🦊",
   racha: 5,
   fechaInicio: "2025-01-15",
+  nivel: 5,
+  monedas: 125,
+  estrellas: 48,
+  estrellasTotales: 450,
+  aventurasCompletadas: 12,
+  logrosObtenidos: 8,
+  logrosTotales: 20,
 };
 
 interface AppContextValue {

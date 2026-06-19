@@ -4,6 +4,13 @@ export interface Usuario {
   avatar: string;
   racha: number;
   fechaInicio: string;
+  nivel: number;
+  monedas: number;
+  estrellas: number;
+  estrellasTotales: number;
+  aventurasCompletadas: number;
+  logrosObtenidos: number;
+  logrosTotales: number;
 }
 
 export interface Logro {
@@ -12,6 +19,7 @@ export interface Logro {
   descripcion: string;
   icono: string;
   obtenido: boolean;
+  dificultad?: "facil" | "media" | "dificil";
   fechaObtenido?: string;
 }
 

@@ -1,45 +1,75 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useApp } from "@/lib/context/AppContext";
 
 export default function Header() {
-  const { isAutenticado, cerrarSesion } = useApp();
+  const { usuario, isAutenticado, cerrarSesion } = useApp();
+  const pathname = usePathname();
+
+  const esInicio = pathname === "/";
+  const esLecciones = pathname.startsWith("/tracks") || pathname.startsWith("/leccion");
+  const esPerfil = pathname.startsWith("/perfil");
+
+  const claseLink = (activo: boolean) =>
+    activo
+      ? "font-semibold text-azul-oscuro underline underline-offset-4 decoration-2"
+      : "text-gris hover:text-azul-oscuro transition-colors";
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="font-extrabold text-xl text-azul-oscuro">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+        <Link href="/" className="font-extrabold text-xl text-azul-oscuro whitespace-nowrap">
           Educación Sin Límites
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-base">
-          <Link
-            href="/"
-            className="font-semibold text-azul-oscuro underline underline-offset-4 decoration-2"
-          >
+          <Link href="/" className={claseLink(esInicio)}>
             Inicio
           </Link>
-          <Link href="/tracks" className="text-gris hover:text-azul-oscuro transition-colors">
+          <Link href="/tracks" className={claseLink(esLecciones)}>
             Lecciones
           </Link>
+          {isAutenticado && (
+            <Link href="/perfil" className={claseLink(esPerfil)}>
+              Perfil
+            </Link>
+          )}
           <Link href="/#mexico" className="text-gris hover:text-azul-oscuro transition-colors">
             México
           </Link>
         </nav>
 
         <div className="flex items-center gap-3">
-          {isAutenticado && (
-            <button
-              onClick={cerrarSesion}
-              className="text-sm text-gris hover:text-azul-oscuro transition-colors"
-            >
-              Salir
-            </button>
+          {isAutenticado && usuario && (
+            <>
+              <span className="hidden sm:flex items-center gap-1 border-2 border-amarillo-card rounded-full px-3 py-1 text-sm font-bold text-gris-oscuro">
+                🪙 {usuario.monedas}
+              </span>
+              <span className="hidden sm:flex items-center gap-1 bg-verde-bosque text-white rounded-full px-3 py-1 text-sm font-bold">
+                ⭐ {usuario.estrellas}
+              </span>
+              <button
+                onClick={cerrarSesion}
+                className="text-sm text-gris hover:text-azul-oscuro transition-colors"
+              >
+                Salir
+              </button>
+            </>
           )}
-          <button
+          {!isAutenticado && (
+            <Link
+              href="/login"
+              className="text-sm font-semibold text-azul-oscuro hover:underline"
+            >
+              Iniciar sesión
+            </Link>
+          )}
+          <Link
+            href={isAutenticado ? "/perfil" : "/login"}
             aria-label="Perfil"
-            className="w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-500 hover:border-azul-oscuro hover:text-azul-oscuro transition-colors"
+            className="w-9 h-9 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-500 hover:border-azul-oscuro hover:text-azul-oscuro transition-colors flex-shrink-0"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +83,7 @@ export default function Header() {
                 clipRule="evenodd"
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </header>

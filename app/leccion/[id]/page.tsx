@@ -1,14 +1,15 @@
+import { notFound } from "next/navigation";
+import leccionesData from "@/data/lecciones.json";
+import type { Leccion } from "@/lib/types";
+import LeccionQuiz from "./LeccionQuiz";
+
+const lecciones = leccionesData as Leccion[];
+
 export default async function LeccionPage({ params }: PageProps<"/leccion/[id]">) {
   const { id } = await params;
+  const leccion = lecciones.find((l) => l.id === id);
 
-  return (
-    <div className="max-w-2xl mx-auto px-4 py-10 text-center">
-      <h1 className="text-4xl font-extrabold text-azul mb-4">Lección {id} 📚</h1>
-      <p className="text-gris text-lg">
-        Aquí irá el motor de quizzes y ejercicios interactivos.
-        <br />
-        <span className="text-sm">(Pantalla a cargo de Christian — Fase 3)</span>
-      </p>
-    </div>
-  );
+  if (!leccion) notFound();
+
+  return <LeccionQuiz leccion={leccion} />;
 }
