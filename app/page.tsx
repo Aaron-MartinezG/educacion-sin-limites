@@ -19,16 +19,17 @@ const FEATURES_MEXICO = [
 ];
 
 export default function Home() {
-  const { isAutenticado, iniciarSesion } = useApp();
+  const { isAutenticado } = useApp();
   const router = useRouter();
 
   useEffect(() => {
-    if (isAutenticado) router.push("/tracks");
+    // No redirigir si el usuario llegó con un ancla (p. ej. el link "México" del
+    // header), de lo contrario el salto a /tracks ocurre antes de poder ver la sección.
+    if (isAutenticado && !window.location.hash) router.push("/tracks");
   }, [isAutenticado, router]);
 
   const handleEntrar = () => {
-    iniciarSesion();
-    router.push("/tracks");
+    router.push("/login");
   };
 
   return (

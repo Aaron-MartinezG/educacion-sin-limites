@@ -1,0 +1,45 @@
+[
+  {
+    "id": "logro-maestro-sumas",
+    "nombre": "Maestro de Sumas",
+    "descripcion": "Completa 10 ejercicios de sumas sin equivocarte.",
+    "icono": "🦉",
+    "dificultad": "facil",
+    "obtenido": true,
+    "fechaObtenido": "2026-05-02"
+  },
+  {
+    "id": "logro-lector-estrella",
+    "nombre": "Lector Estrella",
+    "descripcion": "Termina 5 lecciones de lectura con puntaje perfecto.",
+    "icono": "🌟",
+    "dificultad": "media",
+    "obtenido": true,
+    "fechaObtenido": "2026-05-20"
+  },
+  {
+    "id": "logro-pequeno-explorador",
+    "nombre": "Pequeño Explorador",
+    "descripcion": "Desbloquea tu primer track de aprendizaje.",
+    "icono": "🧭",
+    "dificultad": "facil",
+    "obtenido": true,
+    "fechaObtenido": "2026-04-10"
+  },
+  {
+    "id": "logro-artista-creativo",
+    "nombre": "Artista Creativo",
+    "descripcion": "Completa una lección del track de Arte.",
+    "icono": "🦁",
+    "dificultad": "facil",
+    "obtenido": true,
+    "fechaObtenido": "2026-05-30"
+  },
+  {
+    "id": "logro-genio-selva",
+    "nombre": "Genio de la Selva",
+    "descripcion": "Alcanza el nivel 10 para desbloquear esta medalla.",
+    "icono": "🔒",
+    "obtenido": false
+  }
+]

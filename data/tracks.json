@@ -1,0 +1,36 @@
+[
+  {
+    "id": "track-matematicas",
+    "nombre": "El Reino de los Números",
+    "descripcion": "Domina las matemáticas a través de aventuras numéricas.",
+    "materia": "matematicas",
+    "icono": "🧮",
+    "color": "azul",
+    "lecciones": [
+      {
+        "id": "leccion-fracciones",
+        "titulo": "Fracciones",
+        "orden": 1,
+        "estado": "actual",
+        "progreso": 59
+      }
+    ]
+  },
+  {
+    "id": "track-espanol",
+    "nombre": "Cuentos de Gigantes",
+    "descripcion": "Explora historias y mejora tu lectura.",
+    "materia": "espanol",
+    "icono": "📖",
+    "color": "verde",
+    "lecciones": [
+      {
+        "id": "leccion-cuentos-gigantes",
+        "titulo": "Cuentos de Gigantes",
+        "orden": 1,
+        "estado": "actual",
+        "progreso": 15
+      }
+    ]
+  }
+]
